@@ -2,7 +2,7 @@ import Header from "./components/header"
 import Navbar from "./components/navbar"
 import Activities from "./components/activities"
 import WeeklyForecast from "./components/weekly-forecast"
-import DailyForecast from "./components/daily-forecast"
+import HourlyForecast from "./components/hourly-forecast"
 import AirConditions from "./components/air-conditions"
 import data from "./db.json"
 
@@ -12,7 +12,7 @@ export default function Home() {
       <div className="text-primary py-6 px-9">
         <section className="flex">
           <Header data={data} />
-          <DailyForecast />
+          <HourlyForecast data={data} />
         </section>
         <section className="flex gap-x-6 pt-9">
           <Navbar />
@@ -20,7 +20,7 @@ export default function Home() {
             <Activities />
             <WeeklyForecast data={data} />
           </div>
-          <AirConditions />
+          <AirConditions data={data} />
         </section>
       </div>
     </main>

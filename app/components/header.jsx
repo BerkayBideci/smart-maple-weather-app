@@ -33,7 +33,7 @@ const Header = ({ data }) => {
   }
 
   return (
-    <div className="w-3/5">
+    <div className="w-4/6">
       <div className="w-full flex justify-between">
         <div className="flex shrink-0 flex-col justify-between">
           <div className="flex gap-x-5">
@@ -44,8 +44,8 @@ const Header = ({ data }) => {
           <span className="text-6xl">{data?.degree}°C</span>
         </div>
         <div className="w-full flex items-center">
-          <Image src={iconPath} width={232} height={215} alt="Weather Icon" className="mx-auto" />
-          <span className="text-4xl">{formattedDate}</span>
+          <Image src={iconPath} width={180} height={180} alt="Weather Icon" className="mx-auto" />
+          <span className="text-4xl pe-20">{formattedDate}</span>
         </div>
       </div>
     </div>
