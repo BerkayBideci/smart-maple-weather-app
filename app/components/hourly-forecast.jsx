@@ -16,8 +16,8 @@ const HourlyForecast = ({ data }) => {
   };
 
   return (
-    <div className="bg-secondary/40 rounded-[1.75rem] p-6 flex flex-col gap-4 grow">
-      <div className="flex gap-x-2">
+    <div className="bg-secondary/40 rounded-[1.75rem] p-6 flex flex-col gap-4 2xl:grow w-full sm:w-1/2 2xl:w-auto">
+      <div className="flex items-center justify-center 2xl:justify-start gap-x-2">
         <div className="relative h-7 w-7">
           <Image src="/assets/hourly-clock.svg" fill className="object-contain" alt="Clock Icon" />
         </div>

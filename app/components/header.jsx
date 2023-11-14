@@ -33,19 +33,21 @@ const Header = ({ data }) => {
   }
 
   return (
-    <div className="w-4/6">
-      <div className="w-full flex justify-between">
-        <div className="flex shrink-0 flex-col justify-between">
-          <div className="flex gap-x-5">
+    <div className="2xl:w-[65.3%]">
+      <div className="w-full flex md:flex-row flex-col justify-between">
+        <div className="flex shrink-0 flex-col justify-between gap-y-2 md:gap-y-10 items-center md:items-start">
+          <div className="flex gap-x-2 md:gap-x-5">
             <Image src="/assets/location-icon.svg" width={20} height={28} alt="Location Pin" />
-            <h1 className="text-2xl">{data?.city}</h1>
+            <h1 className="lg:text-2xl text-xl">{data?.city}</h1>
           </div>
-          <span className="text-3xl">{data?.type}</span>
-          <span className="text-6xl">{data?.degree}°C</span>
+          <span className="lg:text-3xl text-2xl">{data?.type}</span>
+          <span className="lg:text-6xl text-4xl">{data?.degree}°C</span>
         </div>
-        <div className="w-full flex items-center">
-          <Image src={iconPath} width={180} height={180} alt="Weather Icon" className="mx-auto" />
-          <span className="text-4xl pe-20">{formattedDate}</span>
+        <div className="w-full flex flex-col md:flex-row items-center justify-between">
+          <div className="relative h-20 w-20 md:h-44 md:w-44 md:mx-auto">
+            <Image src={iconPath} fill alt="Weather Icon" />
+          </div>
+          <span className="lg:text-4xl md:text-2xl text-base 2xl:pe-20">{formattedDate}</span>
         </div>
       </div>
     </div>

@@ -26,26 +26,28 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-secondary/40 max-w-[11.5rem] p-11 rounded-[1.75rem] flex flex-col justify-center items-center">
-      <div className="flex flex-col justify-center items-center gap-7">
-        <Image
-          src="/logo/smart-maple-navbar-logo.png"
-          width={100}
-          height={100}
-          alt="Smart Maple Logo"
-        />
+    <div className="bg-secondary/40 2xl:min-w-[11.5rem] p-6 md:p-11 rounded-[1.75rem] flex 2xl:flex-col min-[506px]:justify-center min-[506px]:items-center overflow-x-auto scrollable">
+      <div className="flex 2xl:flex-col justify-center items-center gap-8">
+        <div className="relative h-16 w-16 md:h-24 md:w-24">
+          <Image
+            src="/logo/smart-maple-navbar-logo.png"
+            fill
+            alt="Smart Maple Logo"
+          />
+        </div>
         {navbarItems.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center justify-center cursor-pointer"
             onClick={() => setSelected(item.name)}
           >
-            <Image
-              src={item.icon}
-              alt={item.name}
-              width={selected === item.name ? 75 : 34}
-              height={selected === item.name ? 75 : 34}
-            />
+            <div className={selected === item.name ? "relative h-12 w-12 md:h-20 md:w-20" : "relative h-8 w-8"}>
+              <Image
+                src={item.icon}
+                alt={item.name}
+                fill
+              />
+            </div>
             <span
               className={
                 selected === item.name ? "text-primary" : "text-secondary"
