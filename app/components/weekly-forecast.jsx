@@ -4,6 +4,14 @@ import Image from "next/image";
 import { useState } from "react";
 
 const WeeklyForecast = ({ data }) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const startAnimation = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1000)
+  };
 
   const weatherIcons = {
     "sunny cloudy": "/assets/sunny-cloudy-icon.svg",
@@ -31,7 +39,7 @@ const WeeklyForecast = ({ data }) => {
   return (
     <div className="bg-secondary/40 py-10 px-3 rounded-[1.75rem]">
       <div className="flex items-center justify-between 2xl:gap-x-6">
-        <button disabled={currentWeekIndex === 0} onClick={handlePreviousWeek} className="hover:rounded-full hover:bg-secondary/60 flex justify-center p-3 disabled:opacity-50 disabled:hover:bg-secondary/30">
+        <button disabled={currentWeekIndex === 0 || isAnimating} onClick={() => { handlePreviousWeek(), startAnimation() }} className="hover:rounded-full hover:bg-secondary/60 flex justify-center p-3 disabled:opacity-50 disabled:hover:bg-secondary/30">
           <div className="relative h-4 w-4">
             <Image src="/assets/left-icon.svg" fill alt="Navigation Icon" className="object-contain" />
           </div>
@@ -39,7 +47,7 @@ const WeeklyForecast = ({ data }) => {
         <div className="flex items-center justify-between gap-x-12 overflow-x-auto scrollable">
           {Object.entries(currentWeekData).map(
             ([day, { type, degree }]) => (
-              <div key={day} className="flex flex-col justify-center items-center gap-y-8 w-[4.75rem]">
+              <div key={day} className={`flex flex-col justify-center items-center gap-y-8 w-[4.75rem] ${isAnimating && "animate-scale"}`}>
                 <span className="uppercase text-xs">{day}</span>
                 <div className="relative overflow-hidden h-10 w-10 min-[970px]:h-[3.75rem] min-[970px]:w-[3.75rem]">
                   <Image
@@ -54,7 +62,7 @@ const WeeklyForecast = ({ data }) => {
             )
           )}
         </div>
-        <button disabled={currentWeekIndex === weeks.length - 1} onClick={handleNextWeek} className="hover:rounded-full hover:bg-secondary/60 flex justify-center p-3 disabled:opacity-50 disabled:hover:bg-secondary/30">
+        <button disabled={currentWeekIndex === weeks.length - 1 || isAnimating} onClick={() => { handleNextWeek(), startAnimation() }} className="hover:rounded-full hover:bg-secondary/60 flex justify-center p-3 disabled:opacity-50 disabled:hover:bg-secondary/30">
           <div className="relative h-4 w-4">
             <Image src="/assets/right-icon.svg" fill alt="Navigation Icon" className="object-contain" />
           </div>
