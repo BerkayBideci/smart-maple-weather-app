@@ -1,0 +1,31 @@
+.navbar__main-container {
+  @apply bg-secondary/40 2xl:min-w-[11.5rem] p-6 md:p-11 rounded-[1.75rem] flex 2xl:flex-col min-[506px]:justify-center min-[506px]:items-center overflow-x-auto scrollable;
+}
+
+.navbar__main-container-layout {
+  @apply flex 2xl:flex-col justify-center items-center gap-8;
+}
+
+.navbar__logo-container {
+  @apply relative h-16 w-16 md:h-24 md:w-24;
+}
+
+.navbar__item-container {
+  @apply flex flex-col items-center justify-center cursor-pointer;
+}
+
+.navbar__item-active {
+  @apply relative h-12 w-12 md:h-20 md:w-20;
+}
+
+.navbar__item-inactive {
+  @apply relative h-8 w-8;
+}
+
+.navbar__item-label-active {
+  @apply text-primary;
+}
+
+.navbar__item-label-inactive {
+  @apply text-secondary;
+}

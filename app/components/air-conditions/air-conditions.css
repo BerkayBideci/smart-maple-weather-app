@@ -1,0 +1,51 @@
+.air-conditions__main-container {
+  @apply bg-secondary/40 rounded-[1.75rem] p-5 flex flex-col lg:flex-row items-center justify-between min-[1826px]:flex-col min-[1826px]:justify-evenly min-[1826px]:items-start relative overflow-hidden w-full gap-5 lg:gap-0;
+}
+
+.air-conditions__wave-effect {
+  @apply object-contain absolute min-[1826px]:bottom-10 min-[1826px]:top-auto lg:right-0 lg:top-[4.5rem] top-60 z-10;
+}
+
+.air-conditions__clock-container {
+  @apply flex items-center gap-2;
+}
+
+.air-conditions__clock-icon-container {
+  @apply relative h-10 w-10 min-[970px]:h-[3.75rem] min-[970px]:w-[3.75rem];
+}
+
+.air-conditions__clock-icon {
+  @apply object-contain;
+}
+
+.air-conditions__clock-text {
+  @apply xl:text-3xl text-xl;
+}
+
+.air-conditions__label {
+  @apply xl:text-3xl text-xl font-bold z-20;
+}
+
+.air-conditions__conditions-container {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-12 min-[1826px]:gap-24 self-center;
+}
+
+.air-conditions__condition-container {
+  @apply flex items-center gap-1 z-20;
+}
+
+.air-conditions__condition-icon-container {
+  @apply relative h-10 w-10 min-[970px]:h-[3.75rem] min-[970px]:w-[3.75rem];
+}
+
+.air-conditions__condition-icon {
+  @apply object-scale-down;
+}
+
+.air-conditions__condition-label-container {
+  @apply flex flex-col text-xl max-[970px]:text-base;
+}
+
+.air-conditions__condition-label {
+  @apply whitespace-nowrap;
+}

@@ -1,0 +1,19 @@
+.activities__main-container {
+  @apply bg-secondary/40 rounded-[1.75rem] px-9 py-10 flex flex-col gap-6;
+}
+
+.activities__label-container {
+  @apply flex items-center justify-center 2xl:justify-start;
+}
+
+.activities__container {
+  @apply flex lg:items-center lg:justify-around 2xl:justify-center scrollable overflow-x-auto gap-6;
+}
+
+.activities__image-container {
+  @apply h-[12.5rem] w-[12.5rem] relative overflow-hidden rounded-md brightness-75 hover:brightness-100 transition-all ease-in delay-150 cursor-pointer shrink-0;
+}
+
+.activities__image {
+  @apply object-cover;
+}

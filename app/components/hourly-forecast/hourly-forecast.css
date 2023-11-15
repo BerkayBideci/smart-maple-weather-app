@@ -1,0 +1,49 @@
+.hourly-forecast__main-container {
+  @apply bg-secondary/40 rounded-[1.75rem] p-6 flex flex-col gap-4 2xl:grow w-full sm:w-1/2 2xl:w-auto relative;
+}
+
+.hourly-forecast__trajectory-line {
+  @apply object-contain z-10;
+}
+
+.hourly-forecast__ellipse-icon-container {
+  @apply absolute h-1 w-1 top-[53px] left-[30px] z-10;
+}
+
+.hourly-forecast__ellipse-icon,
+.hourly-forecast__yellow-line,
+.hourly-forecast__clock-icon {
+  @apply object-contain;
+}
+
+.hourly-forecast__yellow-line-container {
+  @apply absolute h-4 w-2 top-[53px] left-[28px] z-0;
+}
+
+.hourly-forecast__label-container {
+  @apply flex items-center justify-center 2xl:justify-start gap-x-2;
+}
+
+.hourly-forecast__clock-icon-container {
+  @apply relative h-7 w-7;
+}
+
+.hourly-forecast__label {
+  @apply text-xl;
+}
+
+.hourly-forecast__forecast-container {
+  @apply flex items-center justify-between grow;
+}
+
+.hourly-forecast__forecast-item-container {
+  @apply flex flex-col items-center justify-between gap-2 z-30;
+}
+
+.hourly-forecast__forecast-item-temperature-label {
+  @apply text-[10px];
+}
+
+.hourly-forecast__forecast-item-time-label {
+  @apply text-[8px];
+}

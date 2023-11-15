@@ -1,0 +1,39 @@
+.header__main-container {
+  @apply 2xl:w-[65.3%];
+}
+
+.header__main-layout {
+  @apply w-full flex md:flex-row flex-col justify-between;
+}
+
+.header__location-container {
+  @apply flex shrink-0 flex-col justify-between gap-y-2 md:gap-y-10 items-center md:items-start;
+}
+
+.header__location-heading-container {
+  @apply flex gap-x-2 md:gap-x-5;
+}
+
+.header__location-heading {
+  @apply lg:text-2xl text-xl;
+}
+
+.header__location-weather-condition-label {
+  @apply lg:text-3xl text-2xl;
+}
+
+.header__location-temperature-label {
+  @apply lg:text-6xl text-4xl;
+}
+
+.header__date-container {
+  @apply w-full flex flex-col md:flex-row items-center justify-between;
+}
+
+.header__date-weather-icon-container {
+  @apply relative h-20 w-20 md:h-44 md:w-44 md:mx-auto;
+}
+
+.header__date-label {
+  @apply lg:text-4xl md:text-2xl text-base 2xl:pe-20;
+}

@@ -1,0 +1,57 @@
+.weekly-forecast__main-container {
+  @apply bg-secondary/40 py-10 px-3 rounded-[1.75rem];
+}
+
+.weekly-forecast__main-layout {
+  @apply flex items-center justify-between 2xl:gap-x-6;
+}
+
+.weekly-forecast__button {
+  @apply hover:rounded-full hover:bg-secondary/60 flex justify-center p-3 disabled:opacity-50 disabled:hover:bg-secondary/30;
+}
+
+.weekly-forecast__button-icon-container {
+  @apply relative h-4 w-4;
+}
+
+.weekly-forecast__button-icon {
+  @apply object-contain;
+}
+
+.weekly-forecast__forecast-container {
+  @apply flex items-center justify-between gap-x-12 overflow-x-auto scrollable;
+}
+
+.weekly-forecast__forecast-item-container {
+  @apply flex flex-col justify-center items-center gap-y-8 w-[4.75rem];
+}
+
+.weekly-forecast__forecast-item-animate-scale {
+  animation: scaleAnimation 1s ease-in-out;
+}
+
+.weekly-forecast__forecast-item-day-label {
+  @apply uppercase text-xs;
+}
+
+.weekly-forecast__forecast-item-weather-icon-container {
+  @apply relative overflow-hidden h-10 w-10 min-[970px]:h-[3.75rem] min-[970px]:w-[3.75rem];
+}
+
+.weekly-forecast__forecast-item-weather-icon {
+  @apply object-contain;
+}
+
+.weekly-forecast__forecast-item-temperature-label {
+  @apply min-[970px]:text-2xl;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

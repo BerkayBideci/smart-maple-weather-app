@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import "./navbar.css";
 
 const Navbar = () => {
   const [selected, setSelected] = useState("weather");
@@ -26,9 +27,9 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-secondary/40 2xl:min-w-[11.5rem] p-6 md:p-11 rounded-[1.75rem] flex 2xl:flex-col min-[506px]:justify-center min-[506px]:items-center overflow-x-auto scrollable">
-      <div className="flex 2xl:flex-col justify-center items-center gap-8">
-        <div className="relative h-16 w-16 md:h-24 md:w-24">
+    <div className="navbar__main-container">
+      <div className="navbar__main-container-layout">
+        <div className="navbar__logo-container">
           <Image
             src="/logo/smart-maple-navbar-logo.png"
             fill
@@ -38,19 +39,23 @@ const Navbar = () => {
         {navbarItems.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center cursor-pointer"
+            className="navbar__item-container"
             onClick={() => setSelected(item.name)}
           >
-            <div className={selected === item.name ? "relative h-12 w-12 md:h-20 md:w-20" : "relative h-8 w-8"}>
-              <Image
-                src={item.icon}
-                alt={item.name}
-                fill
-              />
+            <div
+              className={
+                selected === item.name
+                  ? "navbar__item-active"
+                  : "navbar__item-inactive"
+              }
+            >
+              <Image src={item.icon} alt={item.name} fill />
             </div>
             <span
               className={
-                selected === item.name ? "text-primary" : "text-secondary"
+                selected === item.name
+                  ? "navbar__item-label-active"
+                  : "navbar__item-label-inactive"
               }
             >
               {item.name}

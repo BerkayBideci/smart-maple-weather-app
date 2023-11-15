@@ -1,26 +1,26 @@
-import Header from "./components/header"
-import Navbar from "./components/navbar"
-import Activities from "./components/activities"
-import WeeklyForecast from "./components/weekly-forecast"
-import HourlyForecast from "./components/hourly-forecast"
-import AirConditions from "./components/air-conditions"
-import Logo from "./components/logo"
-import data from "./db.json"
+import Header from "./components/header/header";
+import Logo from "./components/logo/logo";
+import HourlyForecast from "./components/hourly-forecast/hourly-forecast";
+import Navbar from "./components/navbar/navbar";
+import Activities from "./components/activities/activities";
+import WeeklyForecast from "./components/weekly-forecast/weekly-forecast";
+import AirConditions from "./components/air-conditions/air-conditions";
+import data from "./db.json";
 
-export default function Home() {
+export default function App() {
   return (
-    <main className="min-h-screen bg-clouds bg-cover bg-no-repeat">
-      <div className="text-primary py-6 px-6 md:px-8">
-        <section className="flex flex-col 2xl:flex 2xl:flex-row 2xl:items-center">
+    <main className="app__main-container">
+      <div className="app__main-layout">
+        <section className="app__top-section-container">
           <Header data={data} />
-          <div className="flex flex-col sm:flex-row 2xl:flex-col items-center 2xl:items-stretch 2xl:grow 2xl:gap-7 gap-6 pt-6 md:pt-0">
+          <div className="app__top-right-section-container">
             <Logo />
             <HourlyForecast data={data} />
           </div>
         </section>
-        <section className="flex flex-col 2xl:flex-row gap-y-6 2xl:gap-x-7 2xl:pt-7 pt-6 xl:max-[1825px]:flex-wrap">
+        <section className="app__bottom-section-container">
           <Navbar />
-          <div className="flex flex-col 2xl:gap-y-5 gap-y-6 grow">
+          <div className="app__bottom-middle-section-container">
             <Activities />
             <WeeklyForecast data={data} />
           </div>
@@ -28,5 +28,5 @@ export default function Home() {
         </section>
       </div>
     </main>
-  )
+  );
 }
